@@ -1,12 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Superhero Phone Book</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<html lang="en" ng-app="superheroApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>Superhero Phone Book</title>
 
-  <script src="app.js"></script>
-</body>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Rambla" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="superheroCtrl as vm">
+    {{2017-1969}}
+
+    <h2>Superhero Phone Book</h2>
+
+    <p> <input type="text" ng-model="search" placeholder="Search"> </p>
+
+    <div class="{{x.affiliation}}" ng-repeat="x in vm.superheros | filter: search">
+      <p class=name>{{x.name}}</p>
+      <img class=img ng-src="{{x.image_url}}" ng-show="vm.viewImage[$index]"/>
+      <p class=phone>{{x.phone}}</p>
+      <p>{{x.affiliation}}</p>
+      <button ng-click="vm.viewImage[$index] = !vm.viewImage[$index]">Pic</button>
+    </div>
+
+    <!-- <div ng-repeat="superhero in vm.superheros">
+      <p>{{superhero.name}}</p>
+      <p>Phone: {{superhero.phone}}</p>
+      <p>Affiliation: {{superhero.affiliation}}</p>
+      <img ng-src={{superhero.image_url}}
+
+    </div> -->
+
+  </body>
 </html>

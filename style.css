@@ -1,0 +1,25 @@
+p {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+}
+
+img {
+  height: 200px;
+}
+
+.name {
+  font-size: 36px;
+  text-shadow: 2px 2px rgb(248, 247, 249);
+}
+
+.phone  {
+  font-family: 'Rambla', sans-serif;
+}
+
+.Marvel {
+  background: red;
+}
+
+.DC {
+  background: blue;
+}
